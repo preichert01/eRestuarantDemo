@@ -54,8 +54,34 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 41%">&nbsp;</td>
-            <td>&nbsp;</td>
+            <td colspan="2" align="center">
+                <asp:DetailsView ID="ReservationListDV" runat="server" AllowPaging="True" AutoGenerateRows="False" DataSourceID="ODSReservaations">
+                    <EmptyDataTemplate>
+                        No Data To Display
+                    </EmptyDataTemplate>
+                    <Fields>
+                        <asp:BoundField DataField="ReservationID" HeaderText="ReservationID" SortExpression="ReservationID" Visible="False" />
+                        <asp:BoundField DataField="CustomerName" HeaderText="Name" SortExpression="CustomerName">
+                        <HeaderStyle BackColor="#999999" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="ReservationDate" DataFormatString="{0:MMM dd,yyyy HH:mm }" HeaderText="Date" SortExpression="ReservationDate">
+                        <HeaderStyle BackColor="#999999" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="NumberInParty" HeaderText="# in Party" SortExpression="NumberInParty">
+                        <HeaderStyle BackColor="#999999" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="ContactPhone" HeaderText="Phone#" SortExpression="ContactPhone">
+                        <HeaderStyle BackColor="#999999" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="ReservationStatus" HeaderText="Status" SortExpression="ReservationStatus">
+                        <HeaderStyle BackColor="#999999" />
+                        </asp:BoundField>
+                        <asp:BoundField DataField="EventCode" HeaderText="Event Code" SortExpression="EventCode">
+                        <HeaderStyle BackColor="#999999" />
+                        </asp:BoundField>
+                    </Fields>
+                </asp:DetailsView>
+            </td>
         </tr>
     </table>
     <asp:ObjectDataSource ID="ODSSpecialEvents" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="SpecialEvents_List" TypeName="eRestuarantSystem.BLL.AdminController"></asp:ObjectDataSource>
@@ -64,5 +90,5 @@
             <asp:ControlParameter ControlID="SpecialEventList" Name="eventcode" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
     </asp:ObjectDataSource>
-</asp:Content>
+    </asp:Content>
 
