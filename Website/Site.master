@@ -55,6 +55,7 @@
                         <li><a runat="server" href="~/SamplePages/ListView">List View Display</a></li>
                         <li><a runat="server" href="~/SamplePages/ReservationsByDate">Repeater Display</a></li>
                         <li><a runat="server" href="~/CommandPages/SpecialEventsAdmin">ListView Crud</a></li>
+                        <li><a runat="server" href="~/CommandPages/WaiterAdmin">Single Row CRUD</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
                     </ul>
