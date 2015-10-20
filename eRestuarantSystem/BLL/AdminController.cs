@@ -144,7 +144,7 @@ namespace eRestuarantSystem.BLL
         }
 
         [DataObjectMethod(DataObjectMethodType.Insert, false)]
-        public void Waiter_ADD(Waiter item)
+        public int Waiters_Add(Waiter item)
         {
             using (eRestaurantContext context = new eRestaurantContext())
             {
@@ -155,6 +155,10 @@ namespace eRestuarantSystem.BLL
                 added = context.Waiters.Add(item);
                 // command is not executed until it is actually saved.
                 context.SaveChanges();
+
+                // The waiter instance added contains the newly inserted 
+                // record to sql including the generated primary key value
+                return added.WaiterID;
 
             }
         }
