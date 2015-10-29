@@ -123,6 +123,16 @@ namespace eRestuarantSystem.BLL
                 return results.ToList();
             }
         }
+
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        public DateTime GetLastBillDateTime()
+        {
+            using (var context = new eRestaurantContext())
+            {
+                var result = context.Bills.Max(eachBillrow => eachBillrow.BillDate);
+                return result;
+            }
+        }// EOF NameSpace
         #endregion
 
         #region Add, Update, Delete of CRUD for CQRS

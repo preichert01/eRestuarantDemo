@@ -49,16 +49,6 @@
                     <a class="navbar-brand" runat="server" href="~/">Peter Reichert</a>
                 </div>
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/SamplePages/SpecialEventsAdmin">Special Events</a></li>
-                        <li><a runat="server" href="~/SamplePages/ListView">List View Display</a></li>
-                        <li><a runat="server" href="~/SamplePages/ReservationsByDate">Repeater Display</a></li>
-                        <li><a runat="server" href="~/CommandPages/SpecialEventsAdmin">ListView Crud</a></li>
-                        <li><a runat="server" href="~/CommandPages/WaiterAdmin">Single Row CRUD</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
@@ -75,6 +65,44 @@
                             </ul>
                         </LoggedInTemplate>
                     </asp:LoginView>
+                    <asp:Menu ID="navMenu" runat="server" 
+                    BackColor="#000000" BorderColor="Red"
+                    StaticMenuItemStyle-ForeColor="#999999" 
+                    StaticMenuItemStyle-VerticalPadding="10px"
+                    StaticMenuItemStyle-HorizontalPadding="10px"
+                    RenderingMode="List" Orientation="Horizontal" 
+                    DynamicMenuItemStyle-ForeColor="#999999" 
+                    DynamicMenuStyle-BackColor="Black">
+                    <Items>
+                        <asp:MenuItem Text="Home" NavigateUrl="~/"></asp:MenuItem>
+
+                        <asp:MenuItem Text="Queries" Value="Queries">
+                            <asp:MenuItem Text="List View Display" NavigateUrl="~/SamplePages/ListView"></asp:MenuItem>
+                            <asp:MenuItem Text="Special Events" NavigateUrl="~/SamplePages/SpecialEventsAdmin"></asp:MenuItem>
+
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="CRUD" Value="CRUD">
+                            <asp:MenuItem Text="Single row Crud" NavigateUrl="~/CommandPages/WaiterAdmin"></asp:MenuItem>
+                            <asp:MenuItem Text="ListView Crud" NavigateUrl="~/CommandPages/SpecialEventsAdmin"></asp:MenuItem>
+
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="Reports" Value="Reports">
+                            <asp:MenuItem Text="Repeater Display" NavigateUrl="~/SamplePages/ReservationsByDate"></asp:MenuItem>
+
+                        </asp:MenuItem>
+
+                        <asp:MenuItem Text="FrontDesk" Value="FrontDesk">
+                            
+                            <asp:MenuItem Text="Front Desk" NavigateUrl="~/UXPages/FrontDesk"></asp:MenuItem>
+
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="About Us" NavigateUrl="~/About.aspx"></asp:MenuItem>
+                         <asp:MenuItem Text="Contact Us" NavigateUrl="~/UXPages/FrontDesk"></asp:MenuItem>
+                      
+                    </Items>
+                </asp:Menu>
                 </div>
             </div>
         </div>
